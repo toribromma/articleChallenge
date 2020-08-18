@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Article preview component</title>
@@ -12,21 +12,81 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    .flex-grid {
+      display: inline-flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
+    .col {
+      flex:1
+    }
+    body {
+      margin: 100px auto auto auto;
+      width: 66%;
+      font-family: 'Manrope', sans-serif;
+      
+    }
+    img {
+      height: 200px;
+      width: 200px;
+    }
+    .item2 {
+      flex-grow: 2;
+      width: 200px;
+      font-size: 15px;
+      height: 200px;
+      padding: 10px;
+    }
+    .item1 {
+      flex-grow: 0;
+      width: 200px;
+      padding: 0px;
+      height: 200px;
+      margin: 20px
+    }
+    .h1 {
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    p {
+      font-size: 13px;
+    }
+    @media all and (max-width: 500px) {
+  .flex-grid {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+
+  }
+  body {
+    margin: auto;
+    width: auto;
+  }
+}
+
   </style>
 </head>
 <body>
-
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
+  <div class="flex-grid">
+    <img class="col item1" src="./images/drawers.jpg">
+    <div class="col item2">
+      <div class="h1">
+        Shift the overall look and feel by adding these wonderful 
+        touches to furniture in your home
+      </div>
+      <p>
+        Ever been in a room and felt like something was missing? 
+        Perhaps it felt slightly bare and uninviting. I’ve got some 
+          simple tips to help you make any room feel complete.
+      </p>
+        <div>
+          Michelle Appleton
+          28 Jun 2020
+        
+          Share
+      </div>
+      </div>
+    </div>
+  </div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
