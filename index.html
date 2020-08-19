@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Article preview component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -13,62 +12,161 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
     .flex-grid {
-      display: inline-flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-    }
-    .col {
-      flex:1
+      display: grid;
+      grid-template-rows: auto 200px auto;
+      grid-template-columns: auto 200px 320px auto;
+      justify-content: center;
     }
     body {
-      margin: 100px auto auto auto;
-      width: 66%;
-      font-family: 'Manrope', sans-serif;
-      
+      margin: 50px auto auto auto;
+      font-family: 'Manrope', sans-serf;
+      background-color: hsl(210, 46%, 95%);
     }
-    img {
-      height: 200px;
-      width: 200px;
-    }
+
     .item2 {
-      flex-grow: 2;
-      width: 200px;
       font-size: 15px;
-      height: 200px;
-      padding: 10px;
+      grid-column-start: 3;
+      grid-row-start: 2;
+      background-color: white;
+      padding: 20px;
+      border-radius: 0px 10px 10px 0px;
     }
     .item1 {
-      flex-grow: 0;
+      grid-column-start: 2;
+      grid-row-start: 2;
       width: 200px;
-      padding: 0px;
       height: 200px;
-      margin: 20px
+      border-radius: 10px 0px 0px 10px;
+    }
+    .item3 {
+      grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      padding: 10px;
+  
     }
     .h1 {
       font-weight: 700;
       line-height: 1.5;
+      color:hsl(217, 19%, 35%);
     }
     p {
-      font-size: 13px;
+      font-size: 10px;
+      font-weight: 500;
+      color: hsl(214, 17%, 51%);
     }
-    @media all and (max-width: 500px) {
-  .flex-grid {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-
+    .avatar {
+      border-radius: 20px;
+      height: 30px;
+      float: left;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+    .share {
+      float: right;
+      position: relative;
+      top: -20px;
+      background-color: hsl(217, 19%, 35%);
+      border-radius: 88%;
+      padding: 2px;
+      padding-left: 4px;
+      padding-right: 4px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .share-active {
+      background-color: hsl(217, 19%, 35%);
+      display: none;
+      border-radius: 4px;
+      position: relative;
+      top: -60px;
+      right: -160px;
+      padding: 0px 5px 0px 5px;
+      /* width: 175px; */
+    }
+    .share-triangle {
+      display: none;
+      width: 0;
+      height: 0;
+      position: relative;
+      top: -45px;
+      right: -220px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid hsl(217, 19%, 35%);
+      z-index: 2;
+    }
+    .share-h1 {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      line-height: 3;
+      font-size: 8px;
+      padding: 4px;
+    }
+    .share-icon {
+      width: 10px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    .h3 {
+      font-size: 10px;
+      margin-top: 20px;
+      color: hsl(217, 19%, 35%)
+    }
+    .h4 {
+      font-size: 8px;
+      color: hsl(214, 17%, 51%);
+    }
+    @media all and (max-width: 800px) {
+      .flex-grid {
+      display: grid;
+      grid-template-rows: auto auto auto; 
+      grid-template-columns: auto 0 0;
+      justify-content: center;
+    }
+      .item1 {
+      grid-column-start: 1 ;
+      grid-row-start: 1 ;
+      width: 285px;  
+      border-radius: 10px 10px 0px 0px;
+    }
+      .item2 {
+        grid-column-start: 1 ;
+        grid-row-start: 2 ;
+        width: 245px;
+        height: 189px;
+        border-radius: 0px 0px 10px 10px;
+      }
+      .item3 {
+        grid-column-start: 1 ;
+        grid-row-start: 3 ;
+        width: 245px;
   }
-  body {
-    margin: auto;
-    width: auto;
-  }
+  .share-active {
+      background-color: hsl(217, 19%, 35%);
+      display: none;
+      border-radius: 0px 0px 4px 4px;
+      position: relative;
+      top: -50px;
+      right: 20px;
+      padding: 0px 5px 0px 5px;
+      width: 275px;
+      z-index: 1;
+      height: 60px;
+    }
+    .share-triangle {
+      opacity: 0%;
+    }
 }
 
   </style>
 </head>
 <body>
   <div class="flex-grid">
-    <img class="col item1" src="./images/drawers.jpg">
-    <div class="col item2">
+    <img class="item1" src="./images/drawers.jpg">
+    <div class="item2">
       <div class="h1">
         Shift the overall look and feel by adding these wonderful 
         touches to furniture in your home
@@ -78,19 +176,51 @@
         Perhaps it felt slightly bare and uninviting. I’ve got some 
           simple tips to help you make any room feel complete.
       </p>
+      <div>
         <div>
+        <img class="avatar" src="./images/avatar-michelle.jpg">
+        <div class="h3">
           Michelle Appleton
+        </div>
+        <div class="h4">
           28 Jun 2020
-        
-          Share
+        </div>
+      </div>
+        <button class="share">
+          <img class="shareIcon" src="./images/icon-share.svg">
+        </button>
+        <span class="share-triangle"></span>
+        <span class="share-active">
+          <span class="share-h1">Share</span>
+          <span><img class="share-icon" src="./images/icon-facebook.svg" alt="facebook image"></span>
+          <span><img class="share-icon" src="./images/icon-pinterest.svg" alt="facebook image"></span>
+          <span><img class="share-icon" src="./images/icon-twitter.svg" alt="facebook image"></span>
+        </span>
       </div>
       </div>
-    </div>
-  </div>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <div class="item3" class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div>
   </div>
 </body>
+<script>
+
+  var button =  document.querySelector(".share")
+ button.addEventListener("click", function() {
+  var x = document.querySelector(".share-active");
+    if(x.style.display === "none") {
+      x.style.display = "inline-block";
+  } else {
+    x.style.display = "none";
+  }
+  var y = document.querySelector(".share-triangle");
+    if(y.style.display === "none") {
+      y.style.display = "inline-block";
+  } else {
+    y.style.display = "none";
+  }
+ })
+
+</script>
 </html>
